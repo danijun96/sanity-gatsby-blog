@@ -9,6 +9,7 @@ import author from "./documents/author";
 import category from "./documents/category";
 import post from "./documents/post";
 import siteSettings from "./documents/siteSettings";
+import product from "./documents/product";
 
 // Object types
 import bodyPortableText from "./objects/bodyPortableText";
@@ -35,6 +36,7 @@ export default createSchema({
     bodyPortableText,
     bioPortableText,
     excerptPortableText,
+    product,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
