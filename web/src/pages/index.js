@@ -35,6 +35,22 @@ export const query = graphql`
   }
 
   query IndexPageQuery {
+    products: allSanityProduct {
+      edges {
+        node {
+          id
+          title
+          publishedAt
+          mainImage {
+            asset {
+              id
+              url
+              title
+            }
+          }
+        }
+      }
+    }
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
       description
@@ -66,7 +82,7 @@ export const query = graphql`
 
 const IndexPage = (props) => {
   const { data, errors } = props;
-
+  console.log(props);
   if (errors) {
     return (
       <Layout>
