@@ -12,6 +12,18 @@ export default {
       description: "Titles should be catchy, descriptive, and not too long",
     },
     {
+      name: "price",
+      type: "string",
+      title: "Price",
+      description: "price of the product",
+    },
+    {
+      name: "quantity",
+      type: "string",
+      title: "Quantity",
+      description: "Quantity of the product",
+    },
+    {
       name: "slug",
       type: "slug",
       title: "Slug",
