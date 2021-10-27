@@ -19,6 +19,14 @@ import mainImage from "./objects/mainImage";
 import authorReference from "./objects/authorReference";
 
 // Then we give our schema to the builder and provide the result to Sanity
+const schemas = [author, category, post, product, siteSettings];
+const objects = [
+  bodyPortableText,
+  bioPortableText,
+  excerptPortableText,
+  mainImage,
+  authorReference,
+];
 export default createSchema({
   // We name our schema
   name: "blog",
@@ -27,16 +35,8 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
-    siteSettings,
-    post,
-    category,
-    author,
-    mainImage,
-    authorReference,
-    bodyPortableText,
-    bioPortableText,
-    excerptPortableText,
-    product,
+    ...schemas,
+    ...objects,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

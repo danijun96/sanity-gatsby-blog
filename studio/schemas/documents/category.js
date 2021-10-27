@@ -4,14 +4,9 @@ export default {
   title: "Category",
   fields: [
     {
-      name: "title",
+      name: "nameOfCategory",
       type: "string",
-      title: "Title",
-    },
-    {
-      name: "description",
-      type: "text",
-      title: "Description",
+      title: "Name of Category",
     },
   ],
 };

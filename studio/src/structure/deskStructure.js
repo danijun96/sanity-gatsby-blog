@@ -1,6 +1,6 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { MdSettings } from "react-icons/md";
-import { MdPerson, MdDescription, MdLocalOffer } from "react-icons/md";
+import { MdPerson, MdAddShoppingCart, MdLocalOffer } from "react-icons/md";
 import IframePreview from "../previews/IframePreview";
 
 // Web preview configuration
@@ -18,7 +18,7 @@ export const getDefaultDocumentNode = (props) => {
    * https://www.sanity.io/docs/structure-builder-reference#getdefaultdocumentnode-97e44ce262c9
    */
   const { schemaType } = props;
-  if (schemaType == "post") {
+  if (schemaType === "post") {
     return S.document().views([
       S.view.form(),
       S.view
@@ -54,15 +54,15 @@ export default () =>
         ),
       S.divider(),
       S.listItem()
-        .title("Blog posts")
-        .icon(MdDescription)
-        .schemaType("post")
-        .child(S.documentTypeList("post").title("Blog posts")),
-      S.listItem()
         .title("Authors")
         .icon(MdPerson)
         .schemaType("author")
         .child(S.documentTypeList("author").title("Authors")),
+      S.listItem()
+        .title("Product")
+        .icon(MdAddShoppingCart)
+        .schemaType("product")
+        .child(S.documentTypeList("product").title("Product")),
       S.listItem()
         .title("Categories")
         .icon(MdLocalOffer)
@@ -73,7 +73,7 @@ export default () =>
       // defined the structure above.
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          !["category", "author", "post", "siteSettings"].includes(
+          !["category", "author", "product", "siteSettings"].includes(
             listItem.getId()
           )
       ),

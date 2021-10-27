@@ -103,11 +103,12 @@ export default {
       media: "mainImage",
     },
     prepare({ title = "No title", publishedAt, slug = {}, media }) {
+      console.log(media[0]);
       const dateSegment = format(new Date(publishedAt), "yyyy/MM");
       const path = `/${dateSegment}/${slug.current}/`;
       return {
         title,
-        media,
+        media: media[0],
         subtitle: publishedAt ? path : "Missing publishing date",
       };
     },
